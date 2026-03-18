@@ -1,41 +1,43 @@
-# 🐧 LabEx Linux Learning - Administration Système & Sécurité
+# Administration Linux - Synthèse des commandes
 
-## 📝 Présentation
-Ce dossier compile les compétences fondamentales acquises sur **LabEx**. Ce socle technique est indispensable pour l'administration de serveurs et les opérations de cybersécurité (Forensics, durcissement système).
+## Gestion des Répertoires et Navigation
+* **ls** : Liste le contenu (Options : `-l` détails, `-a` cachés, `-R` récursif).
+* **cd** : Change de répertoire (`..` pour le parent, `-` pour le précédent).
+* **mkdir** : Crée un répertoire (`-p` pour créer les parents).
+* **rmdir** : Supprime un répertoire vide.
+* **man** : Affiche le manuel d'une commande.
 
----
+## Gestion des Utilisateurs et Groupes
+* **useradd** : Crée un utilisateur (`-m` pour créer le home directory).
+* **usermod** : Modifie un compte (`-d` répertoire, `-aG` ajouter à un groupe).
+* **passwd** : Gère les mots de passe (`-l` pour verrouiller).
+* **userdel** : Supprime un utilisateur.
+* **su** : Change d'utilisateur.
+* **whoami** : Affiche l'utilisateur actuel.
+* **id** : Affiche les identifiants UID et GID.
+* **groups** : Affiche les groupes de l'utilisateur.
 
-## 🛠 Compétences Validées
+## Manipulation de Fichiers
+* **touch** : Crée un fichier vide ou met à jour l'horodatage.
+* **cp** : Copie des fichiers ou répertoires (`-r` pour le récursif).
+* **mv** : Déplace ou renomme un fichier.
+* **rm** : Supprime des fichiers (`-i` confirmation, `-r` récursif).
+* **echo** : Affiche du texte ou redirige vers un fichier (`>` écraser, `>>` ajouter).
+* **chown** : Change le propriétaire et le groupe (`-R` récursif).
+* **chmod** : Modifie les permissions (Ex: `700`). Rappel : 4 (r), 2 (w), 1 (x).
 
-### 1. Gestion des Utilisateurs et des Accès (IAM)
-* [cite_start]**Création et Modification :** Utilisation de `useradd -m` pour les répertoires personnels et `usermod -aG` pour la gestion des groupes[cite: 2].
-* [cite_start]**Sécurité des Comptes :** Gestion des mots de passe avec `passwd` et verrouillage de comptes avec l'option `-l`[cite: 4, 7, 9].
-* [cite_start]**Identification :** Audit rapide de l'identité actuelle avec `whoami`, `id` et `groups`[cite: 3, 6, 14, 16].
+## Lecture et Comparaison
+* **cat** : Affiche le contenu complet (`-n` pour numéroter les lignes).
+* **head** / **tail** : Affiche le début ou la fin d'un fichier.
+* **grep** : Filtre le contenu d'un fichier (`-w` pour le mot exact).
+* **diff** : Compare deux fichiers.
+* **vimdiff** : Compare des fichiers avec l'interface Vim.
 
-### 2. Manipulation Avancée de l'Arborescence
-* [cite_start]**Navigation & Structure :** Maîtrise de `cd`, `mkdir -p` pour les hiérarchies complexes et `ls -la` pour l'affichage des fichiers cachés et des permissions[cite: 2].
-* [cite_start]**Cycle de vie des fichiers :** Création (`touch`), copie récursive (`cp -r`), déplacement (`mv`) et suppression sécurisée (`rm -i`)[cite: 19, 20].
-* [cite_start]**Recherche & Filtrage :** Utilisation de `grep -w` pour extraire des motifs exacts dans des fichiers de configuration ou des logs[cite: 2].
+## Système et Flux
+* **uname** : Affiche le nom du noyau.
+* **uptime** : Affiche le temps de fonctionnement du système.
+* **top** : Affiche les processus en cours en temps réel.
+* **&&** : Permet d'exécuter deux commandes à la suite.
+* **| (Pipe)** : Transmet la sortie d'une commande à une autre.
 
-### 3. Redirections et Flux de Données
-* [cite_start]**Gestion des Sorties :** Utilisation des opérateurs `>` (écrasement) et `>>` (incrémentation) pour documenter des résultats ou créer des fichiers[cite: 20].
-* [cite_start]**Lecture sélective :** Analyse de fichiers volumineux avec `head` (début), `tail -f` (suivi de logs en temps réel) et `cat -n`[cite: 23].
-
-### 4. Droits et Propriétés (Security Hardening)
-* [cite_start]**Permissions Octales :** Application du mode `700` pour isoler des répertoires sensibles[cite: 20].
-* [cite_start]**Calcul des droits :** Maîtrise du système binaire `4 (r)`, `2 (w)`, `1 (x)`[cite: 20].
-* [cite_start]**Propriété :** Changement récursif des propriétaires avec `chown -R user:group`[cite: 20].
-
-### 5. Monitoring et Comparaison
-* [cite_start]**État du Système :** Surveillance des ressources avec `top` (processus) et `uptime`[cite: 13, 15, 17].
-* [cite_start]**Analyse Différentielle :** Utilisation de `diff` et `vimdiff` pour comparer des versions de fichiers de configuration[cite: 23].
-
----
-
-## 🚀 Prochaines étapes
-- [ ] Approfondissement des **Expressions Régulières (Regex)** pour le filtrage complexe.
-- [ ] Automatisation via **Scripts Bash** (boucles, conditions).
-- [ ] Gestion des services et des interfaces réseau.
-
----
-*Dernière mise à jour : 18 mars 2026*
+18 mars 2026
